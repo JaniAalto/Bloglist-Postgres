@@ -6,7 +6,7 @@ const Readinglist = require('../models/readinglist')
 const { tokenExtractor } = require('../util/tokenExtractor')
 
 router.post('/', async (req, res) => {
-  console.log("req.body", req.body)
+  //console.log("req.body", req.body)
   const readinglist = await Readinglist.create(req.body)
   res.json(readinglist)
 })

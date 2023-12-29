@@ -4,7 +4,6 @@ require('express-async-errors')
 const { Blog } = require('../models')
 const sequelize = require('sequelize')
 
-
 router.get('/', async (req, res) => {
   const blogs = await Blog.findAll({
     attributes: [

@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', blogFinder, async (req, res) => {
   if (req.blog) {
-    console.log(req.blog.toJSON())
+    //console.log(req.blog.toJSON())
     res.json(req.blog)
   } else {
     res.status(404).end()
@@ -71,7 +71,6 @@ router.put('/:id', blogFinder, tokenExtractor, async (req, res) => {
 
 router.delete('/:id', blogFinder, tokenExtractor, async (req, res) => {
   if (req.blog) {
-    //console.log("req.blog.userId", req.blog.userId)
     const user = await User.findByPk(req.decodedToken.id)
     if (req.blog.userId === user.id && req.sessionValid) {
       await req.blog.destroy()
