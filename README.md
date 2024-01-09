@@ -1,1 +1,1 @@
-# Bloglist-Postgres
+Full Stack Open part 13
